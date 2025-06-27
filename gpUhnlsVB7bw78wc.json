@@ -554,22 +554,6 @@
     },
     {
       "parameters": {
-        "content": "## Backup to GitHub \nThis workflow will backup all instance workflows to GitHub.\n\nThe files are saved `ID.json` for the filename.\n\n### Setup\nOpen `Globals` node and update the values below 👇\n\n- **repo.owner:** your Github username\n- **repo.name:** the name of your repository\n- **repo.path:** the folder to use within the repository. If it doesn't exist it will be created.\n\n\nIf your username was `john-doe` and your repository was called `n8n-backups` and you wanted the workflows to go into a `workflows` folder you would set:\n\n- repo.owner - john-doe\n- repo.name - n8n-backups\n- repo.path - workflows/\n\n\nThe workflow calls itself using a subworkflow, to help reduce memory usage.",
-        "height": 600.88409546716,
-        "width": 371.1995072042308,
-        "color": 4
-      },
-      "id": "929c14ab-98f8-4390-8c7b-753914506104",
-      "name": "Sticky Note1",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        220,
-        0
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
         "content": "## Main workflow loop",
         "height": 434.88564057365943,
         "width": 886.4410237965205,
@@ -720,6 +704,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2025-06-27T10:34:03.000Z",
-  "versionId": "606f2917-4a30-4486-a9b4-1793b2ff06dc"
+  "updatedAt": "2025-06-27T10:37:32.000Z",
+  "versionId": "2a68c5a2-386e-4d89-8a27-f22d9724be69"
 }
