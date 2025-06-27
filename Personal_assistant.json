@@ -1,0 +1,538 @@
+{
+  "name": "Personal assistant",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        440,
+        0
+      ],
+      "id": "7d24f1f9-8304-4e13-a637-6e7cf753412d",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "gpt-4o"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        220
+      ],
+      "id": "fb74a25b-90d3-46e9-994e-dffca26a5107",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "UnESzjaBi8iW7Q6V",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        320,
+        220
+      ],
+      "id": "e66ff1b2-5e96-47d2-9ce9-586ecd715701",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -460,
+        -40
+      ],
+      "id": "fd909b9d-05fe-40b0-b0f6-ebdd1c41316e",
+      "name": "When chat message received",
+      "webhookId": "0555eec4-4e1d-4276-bca8-669b1592f314"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1_RAo_OILth2n7mfHB0mGdTWi4CxjmEFSFpALkB3qAEw",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_RAo_OILth2n7mfHB0mGdTWi4CxjmEFSFpALkB3qAEw/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_RAo_OILth2n7mfHB0mGdTWi4CxjmEFSFpALkB3qAEw/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        460,
+        220
+      ],
+      "id": "62a7db82-3907-43dd-9288-89ae47ee1712",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "eIz21y3E7ZPKPEey",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "trigger": [
+          "message",
+          "app_mention"
+        ],
+        "watchWorkspace": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.slackTrigger",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        0
+      ],
+      "id": "be19f3c6-5772-4bf3-8e3c-fdd3c2a25360",
+      "name": "Slack Trigger",
+      "webhookId": "c1ac3980-4519-46f1-954b-a3de0ee9ae61",
+      "credentials": {
+        "slackApi": {
+          "id": "Mak5PgrOiHKdDhiN",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C092YENH3EE",
+          "mode": "list",
+          "cachedResultName": "all-zigron"
+        },
+        "text": "={{ $json.output }}",
+        "otherOptions": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        1000,
+        -40
+      ],
+      "id": "cf651211-0863-4f6e-9f46-e2b74ef021d4",
+      "name": "Slack",
+      "webhookId": "a20f8c8c-20d1-45be-b935-32790077e350",
+      "credentials": {
+        "slackApi": {
+          "id": "Mak5PgrOiHKdDhiN",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "description": "Call this tool to take action in gmail.",
+        "workflowId": {
+          "__rl": true,
+          "value": "jRXUclCxK6k7EJ7R",
+          "mode": "list",
+          "cachedResultName": "email agent"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        600,
+        220
+      ],
+      "id": "37e429cd-57df-4f84-85d1-b48e47fcab2a",
+      "name": "email agent"
+    },
+    {
+      "parameters": {
+        "description": "Call this tool to take action in calendar.",
+        "workflowId": {
+          "__rl": true,
+          "value": "4euG1pZVpW2SaoSu",
+          "mode": "list",
+          "cachedResultName": "calendar agent"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        720,
+        220
+      ],
+      "id": "22f0c176-93e0-4afb-b418-0464c8224e01",
+      "name": "calendar agent"
+    },
+    {
+      "parameters": {
+        "description": "Call this tool to search the internet to answer the user's question.",
+        "workflowId": {
+          "__rl": true,
+          "value": "gY8TrPOuETFQrhpM",
+          "mode": "list",
+          "cachedResultName": "research assistant"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        860,
+        220
+      ],
+      "id": "8df30c04-0eec-4a28-9202-74474bf64056",
+      "name": "research agent"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=summarize this incoming information:\n{{ $json.output }}\noutput only plain text, there should be no markdown formatting or any symbols.",
+              "role": "system"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        1360,
+        -160
+      ],
+      "id": "babd876e-0fe4-4f7e-a31b-9fcb7aa4f653",
+      "name": "summarize agent response",
+      "credentials": {
+        "openAiApi": {
+          "id": "UnESzjaBi8iW7Q6V",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.elevenlabs.io/v1/text-to-speech/rU18Fk3uSDhmg5Xh41o4",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "xi-api-key",
+              "value": "https://api.elevenlabs.io/v1/text-to-speech/rU18Fk3uSDhmg5Xh41o4"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"text\": \"{{ JSON.stringify($json.message.content).replace(/(^\\\"|\\\"$)/g, '') }}\"\n}\n\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1720,
+        -160
+      ],
+      "id": "1e0a2d50-1810-462b-8ca6-59ba236ed7b5",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "description": "Retrieves information about company projects. "
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "typeVersion": 1.1,
+      "position": [
+        1100,
+        260
+      ],
+      "id": "3073f3ff-e1e9-4f8c-9125-372fd3f3d4ef",
+      "name": "vector store tool"
+    },
+    {
+      "parameters": {
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "sample",
+          "mode": "list",
+          "cachedResultName": "sample"
+        },
+        "options": {
+          "pineconeNamespace": "demo"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.2,
+      "position": [
+        880,
+        420
+      ],
+      "id": "777f6d38-8091-4fe0-addd-4144626753e8",
+      "name": "Pinecone Vector Store",
+      "credentials": {
+        "pineconeApi": {
+          "id": "fXtJ3q2ouCguAzY7",
+          "name": "PineconeApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        840,
+        580
+      ],
+      "id": "7c0915ca-d4e3-4010-8d4c-c776b7f44740",
+      "name": "Embeddings OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "UnESzjaBi8iW7Q6V",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1220,
+        420
+      ],
+      "id": "bcd28646-dec1-4ec8-a658-584ad62cc11f",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "UnESzjaBi8iW7Q6V",
+          "name": "OpenAi account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        []
+      ]
+    },
+    "Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slack Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        []
+      ]
+    },
+    "email agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "calendar agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "research agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "summarize agent response": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "vector store tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pinecone Vector Store": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "vector store tool",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "vector store tool",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "bd3336c6-99a8-4a31-b44e-9195e18f69cf",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "a8eade9e128a27ba10ec9d023234239d435dc057d2bd983083a80f32515e36e7"
+  },
+  "id": "aHucIx0J2pHFbAfA",
+  "tags": []
+}
