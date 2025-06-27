@@ -1,0 +1,570 @@
+{
+  "active": false,
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail Trigger": {
+      "main": [
+        [
+          {
+            "node": "Gmail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail": {
+      "main": [
+        []
+      ]
+    },
+    "Gmail Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text Classifier": {
+      "main": [
+        [
+          {
+            "node": "Gmail5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Gmail6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Gmail2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Gmail5": {
+      "main": [
+        [
+          {
+            "node": "Personal Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail6": {
+      "main": [
+        [
+          {
+            "node": "Others Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail2": {
+      "main": [
+        [
+          {
+            "node": "Social support agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Personal Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Others Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Social support agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Personal Agent": {
+      "main": [
+        []
+      ]
+    },
+    "Others Agent": {
+      "main": [
+        []
+      ]
+    },
+    "Social support agent": {
+      "main": [
+        []
+      ]
+    },
+    "Gmail3": {
+      "ai_tool": [
+        [
+          {
+            "node": "Personal Agent",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "Others Agent",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "Social support agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-06-20T06:13:18.877Z",
+  "id": "2qJstI88DtsLcZdf",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Routing",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -320,
+        -200
+      ],
+      "id": "90505056-0c14-42a7-9450-92832c8220fd",
+      "name": "When chat message received",
+      "webhookId": "f12dd461-f4f5-4079-a2a8-2c6b329a2205"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -100,
+        0
+      ],
+      "id": "2d5555f0-e649-410b-b022-62e5f327b636",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "UnESzjaBi8iW7Q6V",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "You are a helpful email assistant.\nWrite a polite and professional email.\nStructure the email."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        0,
+        -200
+      ],
+      "id": "30754a1f-ea67-414e-ba79-efa6e4266f86",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', ``, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {
+          "appendAttribution": false,
+          "senderName": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Sender_Name', ``, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        260,
+        20
+      ],
+      "id": "a7ec4647-4552-4ecf-be92-29dcf60af8be",
+      "name": "Gmail1",
+      "webhookId": "4537a3d9-e9e6-4f54-a344-2f3977a37644",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "KjL5VOpBre5Y5My0",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "filters": {
+          "labelIds": [
+            "INBOX"
+          ],
+          "readStatus": "unread"
+        }
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -160,
+        220
+      ],
+      "id": "a9d184e9-d8f6-4fa5-b9ef-ac8d24f62248",
+      "name": "Gmail Trigger",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "KjL5VOpBre5Y5My0",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "markAsRead",
+        "messageId": "={{ $json.id }}"
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        60,
+        220
+      ],
+      "id": "80f12de1-6cd6-4a50-9de0-b445c12968e7",
+      "name": "Gmail",
+      "webhookId": "af3d8379-79e3-420f-ad4c-dc87e76f1309",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "KjL5VOpBre5Y5My0",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "filters": {
+          "labelIds": [
+            "INBOX"
+          ],
+          "readStatus": "both"
+        }
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -460,
+        680
+      ],
+      "id": "cc2af955-fbf4-4748-a45c-e0af4217dd6d",
+      "name": "Gmail Trigger1",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "KjL5VOpBre5Y5My0",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputText": "=Subject: {{ $json.Subject }}\nEmail body: {{ $json.snippet }}",
+        "categories": {
+          "categories": [
+            {
+              "category": "Personal",
+              "description": "marks emails as personal that are directed towards me and dont have any business impact"
+            },
+            {
+              "category": "Others ",
+              "description": "Anything that doesn't fall into the categories above."
+            },
+            {
+              "category": "Socials",
+              "description": "Any email from a social media platform"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "typeVersion": 1.1,
+      "position": [
+        -200,
+        680
+      ],
+      "id": "13b74802-e759-4127-b8ee-3ed90ac4603f",
+      "name": "Text Classifier"
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $('Gmail Trigger1').item.json.id }}",
+        "labelIds": [
+          "Label_6090355624125337180"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        260,
+        520
+      ],
+      "id": "62d0a025-1a4f-4abf-b2db-d80c6ad54653",
+      "name": "Gmail5",
+      "webhookId": "719b25c7-9aa4-4913-8f17-37bc37f7bb6d",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "KjL5VOpBre5Y5My0",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $('Gmail Trigger1').item.json.id }}",
+        "labelIds": [
+          "Label_5017828589870551148"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        280,
+        700
+      ],
+      "id": "dc2ee312-63c0-424c-807e-8a2b2cd3f253",
+      "name": "Gmail6",
+      "webhookId": "719b25c7-9aa4-4913-8f17-37bc37f7bb6d",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "KjL5VOpBre5Y5My0",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.id }}",
+        "labelIds": [
+          "Label_3194451412578832533"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        280,
+        940
+      ],
+      "id": "9e1b0704-253a-474a-8617-e401f609166c",
+      "name": "Gmail2",
+      "webhookId": "712bc06b-52f7-4b78-80bf-aa9775194271",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "KjL5VOpBre5Y5My0",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Email from: {{ $('Gmail Trigger1').item.json.labels[0].name }}\nEmail:{{ $('Gmail Trigger1').item.json.snippet }}",
+        "options": {
+          "systemMessage": "#overview\nYou are a personal assistant. Your job is to respond to personal inquiries in a friendly and professional manner.\n\n#tools\nEmail draft - use this to send an email reply to a customer. Always sign off as Hadia."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        480,
+        520
+      ],
+      "id": "cd853a64-1ba7-4ebf-b216-83890908a7ba",
+      "name": "Personal Agent"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Email from: {{ $('Gmail Trigger1').item.json.to.value[0].name }}\nEmail:{{ $('Gmail Trigger1').item.json.text }}",
+        "options": {
+          "systemMessage": "#overview\nYou are a personal assistant. Your job is to respond to personal inquiries in a friendly and professional manner.\n\n#tools\nEmail draft - use this to send an email reply to a customer. Always sign off as Hadia."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        780,
+        700
+      ],
+      "id": "54294b03-015b-46ce-bbb4-47740df5deb1",
+      "name": "Others Agent"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Email from: {{ $('Gmail Trigger1').item.json.to.value[0].name }}\nEmail:{{ $('Gmail Trigger1').item.json.text }}",
+        "options": {
+          "systemMessage": "#overview\nYou are a social support assistant. Your job is to respond to personal inquiries in a friendly and professional manner.\n\n#tools\nEmail draft - use this to send an email reply to a customer. Always sign off as Hadia."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        600,
+        940
+      ],
+      "id": "fc9fdf3c-26be-460e-a12c-e0ee2c9113c0",
+      "name": "Social support agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -160,
+        1120
+      ],
+      "id": "2bcb582c-d498-4daa-bfdf-bc12ee3820d1",
+      "name": "OpenAI Chat Model2",
+      "credentials": {
+        "openAiApi": {
+          "id": "UnESzjaBi8iW7Q6V",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "draft",
+        "subject": "={{ $fromAI(\"subject\") }}",
+        "emailType": "html",
+        "message": "={{ $fromAI(\"emailBody\")}}",
+        "options": {
+          "threadId": "={{ $('Gmail Trigger1').item.json.threadId }}",
+          "sendTo": "={{ $('Gmail Trigger1').item.json.From }}"
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        1280,
+        840
+      ],
+      "id": "54430ff9-5ffd-4a39-b3ed-f2b76da4f7fb",
+      "name": "Gmail3",
+      "webhookId": "7e46ffe2-2263-476d-b222-ac2c89a4e6d5",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "KjL5VOpBre5Y5My0",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-06-23T10:26:11.000Z",
+  "versionId": "21220385-2506-4018-8a21-1f56f54c8c4f"
+}
