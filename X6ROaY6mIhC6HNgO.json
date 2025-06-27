@@ -1,0 +1,2085 @@
+{
+  "active": false,
+  "connections": {
+    "Aggregate1": {
+      "main": [
+        [
+          {
+            "node": "Summarize1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract PDF Text": {
+      "main": [
+        [
+          {
+            "node": "Inser into Supabase VectorStore1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from Excel": {
+      "main": [
+        [
+          {
+            "node": "Aggregate1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Inser into Supabase VectorStore1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set File ID": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download File": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to Google Doc1": {
+      "main": [
+        [
+          {
+            "node": "Delete File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Delete Old Doc Rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to Google Doc2": {
+      "main": [
+        [
+          {
+            "node": "Delete File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Switch2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Download File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Download File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "File Updated": {
+      "main": [
+        [
+          {
+            "node": "Set File ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from Text File": {
+      "main": [
+        [
+          {
+            "node": "Inser into Supabase VectorStore1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from Text File1": {
+      "main": [
+        [
+          {
+            "node": "Insert into Supabase VectorStore",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Version1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Old Doc Rows": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing": {
+      "main": [
+        []
+      ]
+    },
+    "Tool Agent": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Tool Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set File ID1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Summarize",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from Excel1": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract PDF Text1": {
+      "main": [
+        [
+          {
+            "node": "Insert into Supabase VectorStore",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Summarize1": {
+      "main": [
+        [
+          {
+            "node": "Inser into Supabase VectorStore1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Summarize": {
+      "main": [
+        [
+          {
+            "node": "Insert into Supabase VectorStore",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recursive Character Text Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Enhanced Default Data Loader1",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recursive Character Text Splitter1": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Enhanced Default Data Loader2",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download File1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Extract PDF Text1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Extract from Text File1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Extract from Excel1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Convert to Google Doc2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Convert to Google Doc2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Convert to Google Doc2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "Set Version1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Tool Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch2": {
+      "main": [
+        [
+          {
+            "node": "Extract PDF Text",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Extract PDF Text",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Extract from Excel",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Convert to Google Doc1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Convert to Google Doc1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Convert to Google Doc1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase1": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "vectordb",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "vectordb": {
+      "ai_tool": [
+        [
+          {
+            "node": "Tool Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase Vector Store": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "vectordb",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Inser into Supabase VectorStore1",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI2": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Insert into Supabase VectorStore",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enhanced Default Data Loader1": {
+      "ai_document": [
+        [
+          {
+            "node": "Inser into Supabase VectorStore1",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enhanced Default Data Loader2": {
+      "ai_document": [
+        [
+          {
+            "node": "Insert into Supabase VectorStore",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Supabase1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Supabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Supabase Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Tool Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "File Created": {
+      "main": [
+        [
+          {
+            "node": "Set File ID1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-06-16T10:33:47.380Z",
+  "id": "X6ROaY6mIhC6HNgO",
+  "isArchived": false,
+  "meta": {
+    "templateId": "self-building-ai-agent",
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Demo: My first AI Agent in n8n",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Start by saying 'hi'\n![Button](https://i.imgur.com/PrIBJI6.png)",
+        "height": 149,
+        "width": 150
+      },
+      "id": "5592c045-6718-4c4e-9961-ce67a251b6df",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        -40
+      ]
+    },
+    {
+      "parameters": {
+        "fieldsToSummarize": {
+          "values": [
+            {
+              "aggregation": "concatenate",
+              "field": "data"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.summarize",
+      "typeVersion": 1.1,
+      "position": [
+        560,
+        1600
+      ],
+      "id": "1d88436b-161d-4af5-97e6-7942b92aa803",
+      "name": "Summarize1"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        260,
+        1660
+      ],
+      "id": "bea64433-6673-4dc1-918c-e721fae6d78c",
+      "name": "Aggregate1"
+    },
+    {
+      "parameters": {
+        "operation": "pdf",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        20,
+        1500
+      ],
+      "id": "4834a7ce-c588-42da-bd49-4ed0a0403ccd",
+      "name": "Extract PDF Text"
+    },
+    {
+      "parameters": {
+        "operation": "xlsx",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        1660
+      ],
+      "id": "5a3decbe-78ef-4a20-827f-bc3308a87064",
+      "name": "Extract from Excel"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b061200b-b2fd-4fe6-84f4-bde33aa64757",
+              "name": "file_id",
+              "value": "={{ $('File Updated').item.json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "5d435658-18d7-4ca1-aa1d-fec8009f741d",
+              "name": "file_type",
+              "value": "={{ $('File Updated').item.json.mimeType }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -3880,
+        2800
+      ],
+      "id": "47775c43-a287-40da-8263-015e48fbf615",
+      "name": "Set File ID"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "1u7L-b74zBYcXRs-F9oeHjqT28vba503T",
+          "mode": "list",
+          "cachedResultName": "Assignment 1.docx",
+          "cachedResultUrl": "https://docs.google.com/document/d/1u7L-b74zBYcXRs-F9oeHjqT28vba503T/edit?usp=drivesdk&ouid=110798264031793236208&rtpof=true&sd=true"
+        },
+        "options": {
+          "googleFileConversion": {
+            "conversion": {
+              "docsToFormat": "text/plain"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -1740,
+        2940
+      ],
+      "id": "1e97cdc2-07d2-46c4-a744-6fe9e30743e1",
+      "name": "Download File",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "Oc60rZd7nRXTzvwy",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://www.googleapis.com/drive/v3/files/{{ $('Set File ID1').item.json.file_id }}/copy",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleDriveOAuth2Api",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "={{ $('Set File ID1').item.json.name }}"
+            },
+            {
+              "name": "mimeType",
+              "value": "application/vnd.google-apps.document"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -460,
+        2140
+      ],
+      "id": "d453ca6a-a34d-4784-af85-e90ce18fc575",
+      "name": "Convert to Google Doc1",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "Oc60rZd7nRXTzvwy",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "738f6cee-b856-4584-9df8-11cff4fd728b",
+              "leftValue": "={{ $('File Updated').item.json.mimeType }}",
+              "rightValue": "application/vnd.google-apps.document",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "20a00cb4-f775-4c68-8da8-f45ad499756d",
+              "leftValue": "={{ ((Date.now() - Date.parse($('File Updated').item.json.createdTime)) / 1000) }}",
+              "rightValue": 60,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -3540,
+        2800
+      ],
+      "id": "44967f6c-bd86-41fb-87cb-54860668853c",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1f39db67-d098-46d9-aacd-e3f517a6b1b4",
+              "name": "file_id",
+              "value": "={{ $('File Created').item.json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "219cad73-23f5-4764-8b04-2cc5bd569701",
+              "name": "file_type",
+              "value": "={{ $('File Created').item.json.mimeType }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1400,
+        1620
+      ],
+      "id": "cd489366-ec0c-4f53-959e-d6ce83bc15ec",
+      "name": "Set File ID1"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        -200,
+        2580
+      ],
+      "id": "dd4b7c0e-a2c8-4125-8905-c9e31829001c",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "fieldsToSummarize": {
+          "values": [
+            {
+              "aggregation": "concatenate",
+              "field": "data"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.summarize",
+      "typeVersion": 1.1,
+      "position": [
+        120,
+        2600
+      ],
+      "id": "8758fe87-a234-4bba-ada5-388eb93fd300",
+      "name": "Summarize"
+    },
+    {
+      "parameters": {
+        "operation": "pdf",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        -920,
+        2360
+      ],
+      "id": "fdc9dc64-13eb-4397-9cf1-8b9da065e219",
+      "name": "Extract PDF Text1"
+    },
+    {
+      "parameters": {
+        "operation": "xlsx",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        -460,
+        2580
+      ],
+      "id": "33c20d3f-e37b-4378-85c2-b8f5b101acc1",
+      "name": "Extract from Excel1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://www.googleapis.com/drive/v3/files/{{ $('Set File ID').item.json.file_id }}/copy",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleDriveOAuth2Api",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "={{ $('Set File ID1').item.json.name }}"
+            },
+            {
+              "name": "mimeType",
+              "value": "application/vnd.google-apps.document"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -660,
+        2780
+      ],
+      "id": "b75cbef0-515d-4aba-b5cb-2439223ef200",
+      "name": "Convert to Google Doc2",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "Oc60rZd7nRXTzvwy",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "deleteFile",
+        "fileId": {
+          "__rl": true,
+          "value": "=8cde3da1-b269-4476-9f30-a17b75de5302",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -440,
+        3000
+      ],
+      "id": "57920709-6304-451a-881d-294fed8d2b45",
+      "name": "Delete File1",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "Oc60rZd7nRXTzvwy",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "deleteFile",
+        "fileId": {
+          "__rl": true,
+          "value": "=c3f8ecc0-0b5f-45e5-9051-f151b2f36d02",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -180,
+        2120
+      ],
+      "id": "368dd66b-3e12-4031-a256-4c66c36f6112",
+      "name": "Delete File",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "Oc60rZd7nRXTzvwy",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chunkSize": 2000,
+        "chunkOverlap": 200,
+        "options": {
+          "splitCode": "markdown"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        700,
+        2280
+      ],
+      "id": "07cfcc95-aa0b-4e28-aef9-a760ad6b0a22",
+      "name": "Recursive Character Text Splitter"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        360,
+        2160
+      ],
+      "id": "7f44f1e8-6837-4605-9341-b0d66186770f",
+      "name": "Embeddings OpenAI1",
+      "credentials": {
+        "openAiApi": {
+          "id": "UnESzjaBi8iW7Q6V",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chunkSize": 2000,
+        "chunkOverlap": 200,
+        "options": {
+          "splitCode": "markdown"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        620,
+        2880
+      ],
+      "id": "d901a998-6c77-40ff-9f4b-626538c8ee50",
+      "name": "Recursive Character Text Splitter1"
+    },
+    {
+      "parameters": {
+        "content": "# Watch Trigger (Drive) - Files Created\\n## Files created in a specific folder -> Check file type and do conversion if necessary -> Extract the text -> Add to Vector Store\\nDrive/Backoffice/Backoffice_Contracts",
+        "height": 420,
+        "width": 320,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3500,
+        1600
+      ],
+      "id": "1aec0d2e-3a9d-4406-bc13-8ea112ae3bf0",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "# Watch Trigger (Drive) - Files Updated\\n## Files updated in a specific folder -> Check file type and do conversion if necessary -> Extract the text -> Add to Vector Store\\nDrive/Backoffice/Backoffice_Contracts",
+        "height": 420,
+        "width": 320,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3000,
+        1600
+      ],
+      "id": "4e8dec96-bbfc-45ef-b968-77b1c5a95fe4",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -1040,
+        1640
+      ],
+      "id": "88250739-5ecb-46e4-9f53-0b42a5636515",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "=file_id",
+                "value": "={{ $('Set File ID1').item.json.file_id }}"
+              },
+              {
+                "name": "=version",
+                "value": "v1"
+              },
+              {
+                "name": "=creator",
+                "value": "={{ $('File Created').item.json.owners[0].displayName }}"
+              },
+              {
+                "name": "created_at",
+                "value": "={{ $('File Created').item.json.createdTime }}"
+              },
+              {
+                "name": "last_modified",
+                "value": "={{ $('File Created').item.json.modifiedTime }}"
+              },
+              {
+                "name": "folder_path",
+                "value": "projects"
+              },
+              {
+                "name": "file_name",
+                "value": "={{ $('File Created').item.json.name }}"
+              },
+              {
+                "name": "file_extension",
+                "value": "={{ $('File Created').item.json.mimeType }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1,
+      "position": [
+        540,
+        2120
+      ],
+      "id": "4b992b08-4916-478d-8d1a-5b39538a93b6",
+      "name": "Enhanced Default Data Loader1"
+    },
+    {
+      "parameters": {
+        "jsonMode": "expressionData",
+        "jsonData": "={{ $json.data || $json.text || $json.concatenated_data }}",
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "=file_id",
+                "value": "={{ $('Set File ID').item.json.file_id }}"
+              },
+              {
+                "name": "=version",
+                "value": "={{ $('OpenAI Chat Model1').item.json.message.content.version }}"
+              },
+              {
+                "name": "=creator",
+                "value": "=={{ $('File Updated').item.json.owners[0].displayName }}"
+              },
+              {
+                "name": "created_at",
+                "value": "=={{ $('File Updated').item.json.createdTime }}"
+              },
+              {
+                "name": "last_modified",
+                "value": "=={{ $('File Updated').item.json.modifiedTime }}"
+              },
+              {
+                "name": "folder_path",
+                "value": "projects"
+              },
+              {
+                "name": "file_name",
+                "value": "=={{ $('File Updated').item.json.name }}"
+              },
+              {
+                "name": "file_extension",
+                "value": "=={{ $('File Updated').item.json.mimeType }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1,
+      "position": [
+        800,
+        2860
+      ],
+      "id": "65ad991b-16fc-4f0a-b024-6512de311016",
+      "name": "Enhanced Default Data Loader2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -1920,
+        2780
+      ],
+      "id": "14e92a09-e5a4-4588-aa98-715594782fd0",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "triggerOn": "specificFolder",
+        "folderToWatch": {
+          "__rl": true,
+          "value": "1n67kdmY-aLN2ZA49yf2D55XkK3jVbx4Q",
+          "mode": "list",
+          "cachedResultName": "Feb march 2023 papers",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1n67kdmY-aLN2ZA49yf2D55XkK3jVbx4Q"
+        },
+        "event": "fileCreated",
+        "options": {
+          "fileType": "all"
+        }
+      },
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1,
+      "position": [
+        -4200,
+        2800
+      ],
+      "id": "c1dccadc-829b-4347-b284-ac6f141e311c",
+      "name": "File Updated",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "Oc60rZd7nRXTzvwy",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "text",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        1840
+      ],
+      "id": "4c2117c2-7471-4517-be83-f59dbdeb3f3d",
+      "name": "Extract from Text File"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.file_type }}",
+                    "rightValue": "application/pdf",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "7b60c88b-4fe2-4334-b35d-d8c7b79c9898"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "PDF"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "d2a245f8-9166-4cdc-83d6-618d792de7c3",
+                    "leftValue": "={{ $json.file_type }}",
+                    "rightValue": "application/vnd.google-apps.document",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Text File"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "cd51e227-0d88-405c-aaf2-ae1e40489c6c",
+                    "leftValue": "={{ $json.file_type }}",
+                    "rightValue": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Excel"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "13779903-d9b3-4ff9-8856-b63d36a8c59c",
+                    "leftValue": "={{ $json.file_type }}",
+                    "rightValue": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Windows Doc(1)"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "848e516d-c834-4d15-82b9-0530acdb73a2",
+                    "leftValue": "={{ $json.file_type }}",
+                    "rightValue": "application/msword",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Windows Doc(2)"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "d4077e84-e3f1-4644-9f0e-197a7e29a20c",
+                    "leftValue": "={{ $json.file_type }}",
+                    "rightValue": "application/vnd.ms-word",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Windows Doc(3)"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "none"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -1280,
+        2660
+      ],
+      "id": "4203f4a4-6b26-47cf-b22d-d4fa1b2ecb49",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "operation": "text",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        -920,
+        2540
+      ],
+      "id": "9eb68960-43ab-47bd-be3a-2168fee10269",
+      "name": "Extract from Text File1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -2960,
+        2760
+      ],
+      "id": "599c8d54-b76d-414a-9b77-1a4db070efbb",
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Webhook').item.json.query }}",
+        "tableName": "Postgres Chat Memory",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        680,
+        640
+      ],
+      "id": "2bf6722e-5bcb-435f-b04d-f6715ebb4983",
+      "name": "Postgres Chat Memory",
+      "credentials": {
+        "postgres": {
+          "id": "HJyADrj1XR5zbEZw",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.file_type }}",
+                    "rightValue": "application/pdf",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "7b60c88b-4fe2-4334-b35d-d8c7b79c9898"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "PDF"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "d2a245f8-9166-4cdc-83d6-618d792de7c3",
+                    "leftValue": "={{ $json.file_type }}",
+                    "rightValue": "application/vnd.google-apps.document",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Text File"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "cd51e227-0d88-405c-aaf2-ae1e40489c6c",
+                    "leftValue": "={{ $json.file_type }}",
+                    "rightValue": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Excel"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "13779903-d9b3-4ff9-8856-b63d36a8c59c",
+                    "leftValue": "={{ $json.file_type }}",
+                    "rightValue": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Windows Doc(1)"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "848e516d-c834-4d15-82b9-0530acdb73a2",
+                    "leftValue": "={{ $json.file_type }}",
+                    "rightValue": "application/msword",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Windows Doc(2)"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "d4077e84-e3f1-4644-9f0e-197a7e29a20c",
+                    "leftValue": "={{ $json.file_type }}",
+                    "rightValue": "application/vnd.ms-word",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Windows Doc(3)"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "none"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -720,
+        1580
+      ],
+      "id": "71caf7be-ddbb-4c66-b2e6-a1365f442ce2",
+      "name": "Switch2"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "Your goal is to take the incoming version number and add 1 to it. \\n\\n[Examples]\\nInput: v1\\nOutput: v2\\n\\nInput: v2\\nOutput: v3\\n\\nInput: v4\\nOutput: v5 \\n\\nThe output field should always be called \\\"version\\",
+              "role": "system"
+            },
+            {
+              "content": "=incoming version number: {{ $json.metadata.version }}",
+              "role": "system"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -2680,
+        2760
+      ],
+      "id": "fc4152ef-865e-44df-8a84-22acfe3fb04b",
+      "name": "Set Version1",
+      "credentials": {
+        "openAiApi": {
+          "id": "UnESzjaBi8iW7Q6V",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "tableId": "=supports-zigron-supabase",
+        "filterType": "string",
+        "filterString": "=metadata->>file_id=like.*{{$json[\"file_id\"]}}*\n"
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -3180,
+        2760
+      ],
+      "id": "0bdbea9d-bc9c-42b2-897c-a38a6bbb9168",
+      "name": "Delete Old Doc Rows",
+      "credentials": {
+        "supabaseApi": {
+          "id": "R0uD7Sc8UdgoG3B5",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "n8n_chat_histories",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "id",
+              "keyValue": "310"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -2360,
+        2300
+      ],
+      "id": "eecffcd7-96fc-44bc-a563-a4ac28215394",
+      "name": "Supabase",
+      "credentials": {
+        "supabaseApi": {
+          "id": "R0uD7Sc8UdgoG3B5",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -2040,
+        2160
+      ],
+      "id": "6c62b792-6263-478f-b17f-9ef85def6648",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=## Steps to follow\n\n{{ $agentInfo.memoryConnectedToAgent ? '1. Skip': `1. STOP and output the following:\n\"Welcome to n8n. Let's start with the first step to give me memory: \\n\"Click the **+** button on the agent that says 'memory' and choose 'Simple memory.' Just tell me once you've done that.\"\n----- END OF OUTPUT && IGNORE BELOW -----` }} \n\n\n{{ Boolean($agentInfo.tools.find((tool) => tool.type === 'Google Calendar Tool')) ? '2. Skip' : \n`2. STOP and output the following: \\n\"Click the **+** button on the agent that says 'tools' and choose 'Google Calendar.'\" \\n ----- IGNORE BELOW -----` }}\n\n\n{{ $agentInfo.tools.find((tool) => tool.type === 'Google Calendar Tool').hasCredentials ? '3. Skip' :\n`3. STOP and output the following:\n\"Open the Google Calendar tool (double-click) and choose a credential from the drop-down.\" \\n ----- IGNORE BELOW -----` }}\n\n\n{{ $agentInfo.tools.find((tool) => tool.type === 'Google Calendar Tool').resource === 'Event' ? '4. Skip' :\n`4. STOP and output the following:\n\"Open the Google Calendar tool (double-click) and set **resource** = 'Event'\" `}}\n\n\n{{ $agentInfo.tools.find((tool) => tool.type === 'Google Calendar Tool').operation === 'Get Many' ? '5. Skip' :\n`5. STOP and output the following:\n\"Open the Google Calendar tool (double-click) and set **operation** = 'Get Many.'\" \\n ----- IGNORE BELOW -----` }}\n\n\n{{ $agentInfo.tools.find((tool) => tool.type === 'Google Calendar Tool').hasValidCalendar ? '6. Skip' :\n`6. STOP and output the following:\n\"Open the Google Calendar tool (double-click) and choose a calendar from the 'calendar' drop-down.\" \\n ----- IGNORE BELOW -----` }}\n\n\n{{ ($agentInfo.tools.find((tool) => tool.type === 'Google Calendar Tool').aiDefinedFields.includes('Start Time') && $agentInfo.tools.find((tool) => tool.type === 'Google Calendar Tool').aiDefinedFields.includes('End Time')) ? '7. Skip' :\n`7. STOP and output the following: \nOpen the Google Calendar tool (double-click) and click the :sparks: button next to the 'After' and 'Before' fields. \\n ----- IGNORE BELOW -----` }}\n\n\n8. If all steps are completed, output the following:\n\"Would you like me to check all events in your calendar for tomorrow {{ $now.plus(1, 'days').toString().split('T')[0] }}?\"\n\n# User message\n\n{{ $json.chatInput }}",
+        "options": {
+          "systemMessage": "==You are *Zigron's Virtual Assistant, designed to assist visitors with their inquiries on Zigron’s website. Your primary role is to provide **accurate, polite, and friendly* responses while ensuring that all information is *strictly related to Zigron*.  \\n\\n🚨 *Important Rule:*  \\n🔹 *Only answer queries related to Zigron.* If a question is unrelated, politely redirect the user to Zigron-specific topics.  \\n\\n---\\n\\n### 🔹 *Response Handling Process:*  \\n\\n1️⃣ *Primary Search – Vector Database (RAG):*  \\n   - Search the *vector store* for relevant content.  \\n   - If the requested information (e.g., emails, contacts) *is not found*, respond with:  \\n     👉 \\\"The data requested is not found.\\\"  \\n\\n2️⃣ *Fallback – SerpAPI for Zigron Website Search:*  \\n   - If the answer is *not found in RAG, use **SerpAPI* to search for *all possible information* from Zigron’s website.  \\n   - Extract and provide only *relevant, accurate, and Zigron-related details*.  \\n   - *Never generate or assume information.*  \\n\\n3️⃣ *Handling Tool & Model Queries:*  \\n   - If a user asks about *tools or the underlying model*, politely inform them:  \\n     👉 \\\"I do not have access to this information.\\\"  \\n\\n4️⃣ *Maintaining a Human-Like Tone:*  \\n   - Be *polite, professional, and human-like* in responses.  \\n   - Keep answers *concise, accurate, and strictly focused on Zigron*.  \\n\\n5️⃣ *Strict Zigron-Only Policy:*  \\n   - If the query *is not related to Zigron*, respond with:  \\n     👉 \\\"I am Zigron's virtual assistant. Please address your queries related to Zigron.\\\"  \\n\\n---\\n\\n### *Processing User Query:*  \\n\\n1️⃣ Search the *vector store (RAG)* for an answer.  \\n2️⃣ If no result, use *SerpAPI* to search *every relevant detail from Zigron's website*.  \\n3️⃣ If still no answer, respond with the *predefined Zigron-only response* above.  \\n4️⃣ Ensure responses are *polite, accurate, and strictly focused on Zigron*.  \\n\\n---\\n\\n✅ *This ensures that the assistant strictly handles Zigron-related inquiries, prevents irrelevant answers, and efficiently retrieves accurate information.* 🚀 Let me know if you need further refinements!"
+        }
+      },
+      "id": "41174c8a-6ac8-42bd-900e-ca15196600c5",
+      "name": "Tool Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        580,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        400,
+        2800
+      ],
+      "id": "7edac0db-03d1-4c23-a26e-062b7dbc105a",
+      "name": "Embeddings OpenAI2",
+      "credentials": {
+        "openAiApi": {
+          "id": "UnESzjaBi8iW7Q6V",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1000,
+        860
+      ],
+      "id": "0a773768-4a49-4932-ab3e-ca34399f8faf",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "UnESzjaBi8iW7Q6V",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "description": "use this tool to retrieve data from vector DB from vector store"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "typeVersion": 1.1,
+      "position": [
+        860,
+        680
+      ],
+      "id": "079adaae-2bed-4114-ac69-697749faca24",
+      "name": "vectordb"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "zigron",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        220,
+        340
+      ],
+      "id": "4fb220c9-0bb0-441a-b1c2-ebbce8d7114e",
+      "name": "Webhook",
+      "webhookId": "e8f91764-9aa5-40d0-bb4c-60c288395496"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        940,
+        340
+      ],
+      "id": "f0c42dc8-b936-4c44-951e-14e7d0145fbb",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        100,
+        720
+      ],
+      "id": "3561d33d-0f07-42c1-bfb3-134169674339",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "R5FI3XBzYry000oP",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "1TE9zq0ESvmDo6P-qXFI_Mov5fRs2hdTK",
+          "mode": "list",
+          "cachedResultName": "9702_m22_qp_22.pdf",
+          "cachedResultUrl": "https://drive.google.com/file/d/1TE9zq0ESvmDo6P-qXFI_Mov5fRs2hdTK/view?usp=drivesdk"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -1280,
+        1740
+      ],
+      "id": "463164ee-39d2-4c0c-8d9f-f42961fe02d5",
+      "name": "Download File1",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "Oc60rZd7nRXTzvwy",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "n8n_chat_histories",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "id",
+              "keyValue": "310"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -2380,
+        2020
+      ],
+      "id": "7724f176-ac5b-4704-87f9-4e03294f143f",
+      "name": "Supabase1",
+      "credentials": {
+        "supabaseApi": {
+          "id": "R0uD7Sc8UdgoG3B5",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "tableName": {
+          "__rl": true,
+          "value": "match_documents",
+          "mode": "list",
+          "cachedResultName": "match_documents"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "typeVersion": 1.2,
+      "position": [
+        660,
+        940
+      ],
+      "id": "d91f3563-2495-4e5e-8ef9-a85730c8f332",
+      "name": "Supabase Vector Store",
+      "credentials": {
+        "supabaseApi": {
+          "id": "R0uD7Sc8UdgoG3B5",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "tableName": {
+          "__rl": true,
+          "value": "match_documents",
+          "mode": "list",
+          "cachedResultName": "match_documents"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "typeVersion": 1.2,
+      "position": [
+        360,
+        2460
+      ],
+      "id": "77e21372-24a0-49f2-b6d2-8e15fba93861",
+      "name": "Insert into Supabase VectorStore",
+      "credentials": {
+        "supabaseApi": {
+          "id": "R0uD7Sc8UdgoG3B5",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "tableName": {
+          "__rl": true,
+          "value": "documents",
+          "mode": "list",
+          "cachedResultName": "documents"
+        },
+        "options": {
+          "queryName": "match_documents"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "typeVersion": 1.2,
+      "position": [
+        440,
+        1940
+      ],
+      "id": "cec33425-8055-465d-8ef9-ea6a80a31267",
+      "name": "Inser into Supabase VectorStore1",
+      "credentials": {
+        "supabaseApi": {
+          "id": "R0uD7Sc8UdgoG3B5",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 30
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -2680,
+        2140
+      ],
+      "id": "4ee76be4-beae-491a-9a3a-e8b751f4dced",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        620,
+        1100
+      ],
+      "id": "2eb6f17f-6331-4519-a819-c50a0cd3f903",
+      "name": "Embeddings OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "UnESzjaBi8iW7Q6V",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "d5e60eb2-267c-4f68-aefe-439031bcaceb",
+      "name": "OpenAI Chat Model1",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        500,
+        560
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "UnESzjaBi8iW7Q6V",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "triggerOn": "specificFile",
+        "fileToWatch": {
+          "__rl": true,
+          "value": "1nl9Rb-IUTLHtkYGcoLcYwQIFaIwayMr52x2-KYa_ct8",
+          "mode": "list",
+          "cachedResultName": "Resume",
+          "cachedResultUrl": "https://docs.google.com/document/d/1nl9Rb-IUTLHtkYGcoLcYwQIFaIwayMr52x2-KYa_ct8/edit?usp=drivesdk"
+        }
+      },
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1740,
+        1620
+      ],
+      "id": "2c176c88-3ed1-45f2-a75a-787574f7a25b",
+      "name": "File Created",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "Oc60rZd7nRXTzvwy",
+          "name": "Google Drive account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-06-18T07:20:42.000Z",
+  "versionId": "c2cbd7dc-c4b8-4982-a7e7-4ce8e21efb51"
+}
