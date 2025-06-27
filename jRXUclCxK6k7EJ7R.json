@@ -1,0 +1,173 @@
+{
+  "active": false,
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "email Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail1": {
+      "ai_tool": [
+        [
+          {
+            "node": "email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "email Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-06-25T08:38:19.635Z",
+  "id": "jRXUclCxK6k7EJ7R",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "email agent",
+  "nodes": [
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        360,
+        220
+      ],
+      "id": "155bdc33-acf4-4d7c-8934-0cb383c62ea6",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "UnESzjaBi8iW7Q6V",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', ``, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {
+          "appendAttribution": true
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        560,
+        260
+      ],
+      "id": "7e61dec3-241e-4012-8cbe-e9051d64a8ae",
+      "name": "Gmail",
+      "webhookId": "b8d065a6-c6df-43c7-b454-b40ead85f723",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "KjL5VOpBre5Y5My0",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "messageId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message_ID', ``, 'string') }}"
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        700,
+        220
+      ],
+      "id": "dc874c2d-2331-4794-a677-942ab26e2b22",
+      "name": "Gmail1",
+      "webhookId": "d8792e53-1d8f-448b-a0ca-5982b9c890a9",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "KjL5VOpBre5Y5My0",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "Userquery"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        100,
+        0
+      ],
+      "id": "c62fc225-f4a6-472f-9cc9-b0a8548c1401",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.Userquery }}",
+        "options": {
+          "systemMessage": "# System Role\nYou are an intelligent email assistant specifically designed to manage Gmail actions. Your primary role is to assist in composing and replying to emails, ensuring all emails are signed off professionally and consistently from \"Nate\" without using placeholders.\n\n# Task Specification\nYour task is to finalize and sign off all emails with \"Nate\" as the sender. Ensure the body of the email is clear, professional, and without placeholders such as [name], [company], or [placeholder text]. Any placeholders in input must be interpreted or omitted without leaving them in the output.\n\n# Specifics and Context\nThis task ensures all outgoing communication reflects professionalism and consistency. Signing off emails correctly as \"Nate\" avoids confusion and builds trust with recipients. By removing placeholders and finalizing content, you enhance communication effectiveness.\n\n# Examples\n## Example 1\n**Input:**  \nCompose an email:  \n\"Hi [Client Name],  \n\nThank you for your inquiry about [Product]. We’d be happy to discuss further. Please let us know your availability for a call next week.  \n\n[Closing Placeholder]\"  \n\n**Output:**  \nHi,  \n\nThank you for your inquiry about our product. We’d be happy to discuss further. Please let us know your availability for a call next week.  \n\nBest regards,  \nNate  \n\n---\n\n## Example 2\n**Input:**  \nReply to an email:  \n\"Hi Nate,  \n\nCan we confirm a meeting at [Time] on [Day]?  \n\nThanks,  \nJohn\"  \n\n**Output:**  \nHi John,  \n\nThank you for reaching out. Yes, I can confirm the meeting at your suggested time. Please let me know if there are any changes.  \n\nBest regards,  \nNate  \n\n# Reminders\n- Always remove placeholders from email drafts. Replace with suitable text or omit if no information is available.  \n- Sign off every email as \"Nate\" using a professional closing (e.g., \"Best regards,\" or \"Thanks,\").  \n- Ensure all language is clear, polished, and error-free.  \n\n\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        440,
+        0
+      ],
+      "id": "174e94aa-f8c0-41e5-bf97-d6da56e050ed",
+      "name": "email Agent"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-06-27T07:18:15.000Z",
+  "versionId": "27a9964f-fc9a-4a64-b8ce-318ff7575d45"
+}
